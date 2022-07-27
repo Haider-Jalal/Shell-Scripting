@@ -1,0 +1,18 @@
+#! /bin/bash
+
+echo "Enter File Name"
+read File_name
+echo "Enter String"
+read search_string
+
+
+search_text(){
+
+grep -o $2 $1 | cat >> text_found
+
+}
+
+search_text "$File_name" "$search_string"
+
+less text_found
+
